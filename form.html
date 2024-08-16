@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    h1 {
+        color: #331b1b;
+    }
+
+    form {
+        width: 300px;
+        margin-bottom: 20px;
+
+        
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    #output {
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        width: 300px;
+    }
+
+    #output p {
+        margin: 5px 0;
+    }
+</style>
+
+<body>
+<center>
+    <h1>Enter Your Information</h1>
+    <form id="myForm" onsubmit="submitForm(); return false;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <label for="">Semester</label>
+        <select name="" id="sem">
+            <option value="Semester1">Semester1</option>
+            <option value="Semester2">Semester2</option>
+            <option value="Semester3">Semester3</option>
+    
+        </select>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="output">
+ 
+    </div>
+
+   
+    <script >
+        function submitForm(){
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+    var semester = document.getElementById("sem").value;
+
+    const output = 
+    "<p><strong>Name:</strong> " + name + "</p>" + 
+    "<p><strong>Email:</strong> " + email + "</p>" + 
+    "<p><strong>Message:</strong> " + message + "</p>" +
+    "<p><strong>Current Semester is:</strong> " + semester + "</p>" 
+
+     document.getElementById("output").innerHTML = output;   
+     
+    //  document.getElementById("myForm").reset();
+
+   }
+    </script>
+</center>
+</body>
+</html>
